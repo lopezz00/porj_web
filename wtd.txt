@@ -1,7 +1,14 @@
-- FEr fotods al lab
-- VEure com posar imatges senceres, no nomes la part de dalt
-git fetch
-git pull
-git add .
-git commit -m "blabla"
-git push -u origin master
+ABANS DE FER COMMINT:
+    Amb aquestes comandes el que fem es demanar-li al repo la ultima versio del que hiha penjat
+    git fetch
+    git pull
+
+UN COP HEM REVISAT EL CODI, PER PENJAR-LO FEM EL SEGÜENT:
+    git add .
+    git commit -m "Commentari del commit"
+    git push -u origin master
+
+COSEES A FER:
+    - Fer fotos al lab per posar a la web.
+    - Veure com posar imatges senceres, no nomes la part de dalt.
+    - Com fer crides a una api
