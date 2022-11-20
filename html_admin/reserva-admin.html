@@ -9,7 +9,7 @@
         <!-- Bootstrap CSS -->
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
         <link rel="stylesheet" href="./css/main.css">
-        <title>Who we are?</title>
+        <title>ADMIN - Reservation</title>
     </head>
 
     <body>
@@ -52,7 +52,60 @@
             </div>
         </nav>
 
+        <form id="histMaquinesform" action="" method="post" role="form" class="form">
+            <!--div id="sendmessage">Consulta realitzada</div-->
+            <!--div id="errormessage">Consulta error</div-->
+            <div class="row">
+                <div class="form-group log-status span8 margintop10 field">
+                    <span class="form-hist"><i class="fas fa-user"></i> &nbsp;User who's reservation is</span>
+                    <br>
+                    <input type="text" placeholder="User email" id="UserEmail">
+                </div>
 
+                <div class="span8 margintop10 field form-group">
+                    <span class="form-hist"><i class="far fa-calendar-alt"></i>&nbsp;Date</span>
+                    <br>
+                    <input type="date" id="data-reserva">
+                    <div class="validation"></div>
+                </div>
+
+                <div class="span8 margintop10 field form-group">
+                    <span class="form-hist"><i class="fas fa-clock"></i>&nbsp;Reservation time</span>
+                    <br>
+                    <input type="time" min = "10:00" id="hora-inici">
+                    <div class="validation"></div>
+                </div>
+
+                <div class="fform-group log-status span8 margintop10 field">
+                    <span class="form-hist"><i class="fas fa-desktop"></i>&nbsp;Laboratory</span>
+                    <br><input type="text" list="maquines">
+                    <datalist id="maquines">
+                        <!-- Posar una llita que s'actualitzi segons labs hi hagin a la uni -->
+                        <option value="Lab 1"></option>
+                        <option value="Lab 2"></option>
+                        <option value="Lab 3"></option>
+                        <option value="Lab 4"></option>
+                        <option value="Lab 5"></option>
+                    </datalist>
+                </div>
+
+                <div class="fform-group log-status span8 margintop10 field">
+                    <span class="form-hist"><i class="fas fa-desktop"></i>&nbsp;Machine</span>
+                    <br><input type="text" list="maquines">
+                    <datalist id="maquines">
+                        <!-- Posar una llita que s'actualitzi segons maquines hi hagin al lab -->
+                        <option value="Machine 1"></option>
+                        <option value="Machine 2"></option>
+                        <option value="Machine 3"></option>
+                        <option value="Machine 4"></option>
+                        <option value="Machine 5"></option>
+                    </datalist>
+                </div>
+                <p>
+                    <button class="btn btn-color marginleft10" type="submit">Submit</button>
+                </p>
+            </div>
+        </form>
 
 
 
@@ -60,8 +113,4 @@
 
     </body>
 
-
-    <footer class="container-fluid bg-primary d-flex justify-content-center">
-        <p class="text-light mt-2 mb-2">Tens alguna incidència? Contacta amb nosaltres! +34 666 666 666</p>
-      </footer>
 </html>
