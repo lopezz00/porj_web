@@ -1,6 +1,7 @@
 <!doctype html>
 <html lang="en">
   <head>
+    <script src="../js/cookies.js" defer></script>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -26,7 +27,7 @@
               <aside class="right-sidebar">
                 <br>
                 <br>
-                <form class ="needs-validation" action="results.html" method="GET">
+                <form class ="needs-validation" method="GET">
                   <div class="form-group was-validated">
                       <label class="form-label" for="email">Email address</label>
                       <input class="form-control" type="email" id="email" placeholder = "User email" required>
@@ -38,8 +39,8 @@
                       <div class="invalid-feedback">Incorrect.</div>
                   </div>
                   <!--input class="btn btn-primary w-100" type="submit" value="SIGN IN"-->
-                  <input class="btn btn-primary w-100" type="submit" value="Submit">
-              </form>
+                  <button type="button" onclick=submitForm()>Submit</button>
+                </form>
               </aside>
             </div>
           </div>
