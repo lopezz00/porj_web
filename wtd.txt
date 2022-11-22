@@ -12,3 +12,8 @@ COSEES A FER:
     - Fer fotos al lab per posar a la web.
     - Veure com posar imatges senceres, no nomes la part de dalt.
     - Com fer crides a una api
+
+DIFERENTES CARPETES:
+    - Admin: Tiene admin, cliente y publico
+    - Cliente: Cliente y publico
+    - Publico: Solo publico
