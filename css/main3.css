@@ -19,12 +19,7 @@ html,body{
   border-radius: 5px;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
 }
-.container header{
-  padding-top: 5px;
-  font-size: 25px;
-  font-weight: 600;
-  line-height: 33px;
-}
+
 .container form{
   margin: 5px 8px;
 }
