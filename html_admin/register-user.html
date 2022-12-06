@@ -74,7 +74,7 @@ if (input.value != document.getElementById('password').value) {
           <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Cancel·la una reserva</a> <!--- En cas de que l'usuari tingui una o mes reserves, s'ha d'activar --->
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#" tabindex="-1" aria-disabled="true" id="sessio_butt" onclick="tancaSessio()">Tanca sessió</a> <!--- Tanca la sessio de l'usuari --->
+          <a class="nav-link" href="#" tabindex="-1" aria-disabled="true" name="sessio_butt" onclick="tancaSessio()">Tanca sessió</a> <!--- Tanca la sessio de l'usuari --->
         
       </ul>
     </div>
@@ -92,7 +92,7 @@ if (input.value != document.getElementById('password').value) {
 </html>
 
 <!---- INTRO --->
-<section id="new_user">
+<section name="new_user">
   <div class="container-md">
     <div class="text-center">
       <h2 class="text-primary mt-3">Registra a un nou usuari</h2>
@@ -102,14 +102,14 @@ if (input.value != document.getElementById('password').value) {
 <div class="row justify-content-center mt-2 mb-5">
   <div class="col-lg-6">
 
-<form>
+<form name="form" action="../../porj_node/db/db_usuaris.php" method="post">
   <div class="mb-2">
     <label for="email_new_user" class="form-label">Correu electrònic:</label>
     <div class="mb-2 input-group">
       <span class="input-group-text">
         <i class="bi bi-person-circle"></i>
               </span>
-      <input required ="required" maxlength="50" type="email" class="form-control" id="correu_new_user" placeholder="Exemple: pau@estudiantat.upc.edu">
+      <input required ="required" maxlength="50" type="email" class="form-control" name="correu_new_user" placeholder="Exemple: pau@estudiantat.upc.edu">
     </div>
     <div id="emailHelp" class="form-text">Totes les dades demanades es corresponen a l'estudiant</div>
   </div>
@@ -120,7 +120,7 @@ if (input.value != document.getElementById('password').value) {
       <span class="input-group-text">
         <i class="bi bi-person-circle"></i>
               </span>
-      <input required ="required" oninput="check_email(this)" class="form-control" id="conf_correu_new_user">
+      <input required ="required" oninput="check_email(this)" class="form-control" name="conf_correu_new_user">
       
     </div>
   </div>
@@ -131,7 +131,7 @@ if (input.value != document.getElementById('password').value) {
       <span class="input-group-text">
         <i class="bi bi-0-circle"></i>
               </span>
-      <input required ="required" maxlength="29" class="form-control" id="name_new_user">
+      <input required ="required" maxlength="29" class="form-control" name="name_new_user">
     </div>
   </div>
 
@@ -141,7 +141,7 @@ if (input.value != document.getElementById('password').value) {
       <span class="input-group-text">
         <i class="bi bi-1-circle"></i>
               </span>
-      <input required ="required"  class="form-control" maxlength="29" id="surname_new_user">
+      <input required ="required"  class="form-control" maxlength="29" name="surname_new_user">
     </div>
 
     <div class="mb-2">
@@ -150,7 +150,7 @@ if (input.value != document.getElementById('password').value) {
         <span class="input-group-text">
           <i class="bi bi-2-circle"></i>
                 </span>
-        <input required ="required"  class="form-control" maxlength="29" id="second_surname_new_user">
+        <input required ="required"  class="form-control" maxlength="29" name="second_surname_new_user">
       </div>
 
   </div>
@@ -163,7 +163,7 @@ if (input.value != document.getElementById('password').value) {
       <i class="bi bi-lock"></i>
     </span>
     <input required ="required" pattern="[a-zA-Z\d.]{5,100}" maxlength="30" title="La contrasenya ha de ser de mínim 5 caràcters i pot tenir lletres, números o punts." 
-    type="password" class="form-control" id="password">
+    type="password" class="form-control" name="password">
     </div>
   </div>
 
@@ -174,7 +174,7 @@ if (input.value != document.getElementById('password').value) {
       <i class="bi bi-lock"></i>
       </span>
     <input required="required" type="password" maxlength="30" class="form-control" 
-    id="password_confirm" oninput="check_pwd(this)">
+    name="password_confirm" oninput="check_pwd(this)">
     </div>
   </div>
 
@@ -183,22 +183,24 @@ if (input.value != document.getElementById('password').value) {
     <span class="input-group-text">
     <i class="bi bi-question-circle"></i>
     </span>
-  <select class="form-select" id="rol">
+  <select class="form-select" name="rol">
     <option value="administrator" selected> Administrador </option>
     <option value="user" selected> Usuari </option>
   </select>
   </div>
 
   <div class="mb-2">
-    <label for="rfid_id" class="form-label">Valor de la targeta (només digits)</label>
+    <label class="form-label">Valor de la targeta</label>
     <div class="mb-2 input-group">
       <span class="input-group-text">
       <i class="bi bi-credit-card"></i>
       </span>
-    <input required="required" id="rfid_id" pattern="[0-9]+" class="form-control" minlength ="8" maxlength="8">
+    <input required="required" name="rfid_value" class="form-control" minlength ="8" maxlength="8">
     </div>
   </div>
   <button type="submit" value="enviar" class="mt-4 btn btn-secondary">Registra</button>
+  <button type="reset" value="Borrar" class="mt-4 btn btn-secondary">Esborra</button>
+
 </form>
   </div>
 </div>
