@@ -34,52 +34,15 @@ if (input.value != document.getElementById('password').value) {
 
   </head>
   <body>
-    <!-- HEADERRRRR -->
-    <!-- Creo que quedaria mejor en el footer ya que creo que se ve too much -->
-    <!-- <header class="container-fluid bg-primary d-flex justify-content-center">
-      <p class="text-light mt-2 mb-2">Tens alguna incidència? Contacta amb nosaltres! +34 666 666 666</p>
-    </header> -->
+    
+    <?php
+    $title="Home";
+    $page="home";
+    include_once ("../navbar.php");
 
-    <!-- Barra de navegacio -->
-<nav class="navbar navbar-expand-lg navbar-light bg-light p-4">
-  <div class="container-fluid">
-    <a class="navbar-brand text-primary fs-5 fw-bold">TechLab</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <li class="nav-item">
-          <div id="ident_b"><a class="nav-link" aria-current="page" href="html_public/login.html">Identifica't</a></div>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Disponibilitat</a>
-        </li>
-        <li class="nav-item dropdown">
-          <a id="reserva_butt" class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Fes una reserva</a>
-          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <li><a class="dropdown-item" href="#">Laboratori 1</a></li>
-            <li><a class="dropdown-item" href="#">Laboratori 2</a></li>
-          </ul>
-        <li class="nav-item dropdown">
-          <a id="admin_butt" class="nav-link active dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Admin: Afegeix</a>
-          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <li><a class="dropdown-item" href="register-machine-on-lab.html">Màquina en laboratori</a></li>
-            <li><a class="dropdown-item" href="">Laboratori</a></li>
-            <li><a class="dropdown-item" href="">Màquina</a></li>
-            <li><a class="dropdown-item active" href="register-user.html">Usuari</a></li>
-          </ul>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Cancel·la una reserva</a> <!--- En cas de que l'usuari tingui una o mes reserves, s'ha d'activar --->
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#" tabindex="-1" aria-disabled="true" name="sessio_butt" onclick="tancaSessio()">Tanca sessió</a> <!--- Tanca la sessio de l'usuari --->
-        
-      </ul>
-    </div>
-  </div>
-</nav>
+  
+    ?>
+    
 <script src="./js/cookies.js">checkCookiesIndex();</script>
 
     <!-- Option 1: Bootstrap Bundle with Popper -->

@@ -34,57 +34,16 @@ if (input.value != document.getElementById('password').value) {
 
   </head>
   <body>
-    <!-- HEADERRRRR -->
-    <!-- Creo que quedaria mejor en el footer ya que creo que se ve too much -->
-    <!-- <header class="container-fluid bg-primary d-flex justify-content-center">
-      <p class="text-light mt-2 mb-2">Tens alguna incidència? Contacta amb nosaltres! +34 666 666 666</p>
-    </header> -->
+    
+    <?php
+    $title="Home";
+    $page="home";
+    include_once ("../navbar.php");
 
-    <!-- Barra de navegacio -->
-<nav class="navbar navbar-expand-lg navbar-light bg-light p-4">
-  <div class="container-fluid">
-    <a class="navbar-brand text-primary fs-5 fw-bold">TechLab</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <li class="nav-item">
-          <div id="ident_b"><a class="nav-link" aria-current="page" href="html_public/login.html">Identifica't</a></div>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Disponibilitat</a>
-        </li>
-        <li class="nav-item dropdown">
-          <a id="reserva_butt" class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Fes una reserva</a>
-          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <li><a class="dropdown-item" href="#">Laboratori 1</a></li>
-            <li><a class="dropdown-item" href="#">Laboratori 2</a></li>
-          </ul>
-        <li class="nav-item dropdown">
-          <a id="admin_butt" class="nav-link active dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Admin: Afegeix</a>
-          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <li><a class="dropdown-item" href="register-machine-on-lab.html">Màquina en laboratori</a></li>
-            <li><a class="dropdown-item active" href="">Laboratori</a></li>
-            <li><a class="dropdown-item" href="">Màquina</a></li>
-            <li><a class="dropdown-item" href="register-user.html">Usuari</a></li>
-          </ul>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Cancel·la una reserva</a> <!--- En cas de que l'usuari tingui una o mes reserves, s'ha d'activar --->
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#" tabindex="-1" aria-disabled="true" id="sessio_butt" onclick="tancaSessio()">Tanca sessió</a> <!--- Tanca la sessio de l'usuari --->
-        
-      </ul>
-    </div>
-  </div>
-</nav>
+  
+    ?>
+    
 <script src="./js/cookies.js">checkCookiesIndex();</script>
-
-<!---- SLIDE DE IMATGES --->
-
-
 
     <!-- Option 1: Bootstrap Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
@@ -96,7 +55,7 @@ if (input.value != document.getElementById('password').value) {
 </html>
 
 <!---- INTRO --->
-<section id="new_user">
+<section name="new_user">
   <div class="container-md">
     <div class="text-center">
       <h2 class="text-primary mt-3">Registra a un nou usuari</h2>
@@ -106,16 +65,16 @@ if (input.value != document.getElementById('password').value) {
 <div class="row justify-content-center mt-2 mb-5">
   <div class="col-lg-6">
 
-<form>
+<form name="form" action="../../porj_node/db/db_usuaris.php" method="post">
   <div class="mb-2">
     <label for="email_new_user" class="form-label">Correu electrònic:</label>
     <div class="mb-2 input-group">
       <span class="input-group-text">
         <i class="bi bi-person-circle"></i>
               </span>
-      <input required ="required" type="email" class="form-control" id="correu_new_user" placeholder="Exemple: pau@estudiantat.upc.edu">
+      <input required ="required" maxlength="50" type="email" class="form-control" name="correu_new_user" placeholder="Exemple: pau@estudiantat.upc.edu">
     </div>
-    <div id="emailHelp" class="form-text">Mai compartirem el teu correu sense el teu consentiment.</div>
+    <div id="emailHelp" class="form-text">Totes les dades demanades es corresponen a l'estudiant</div>
   </div>
 
   <div class="mb-2">
@@ -124,19 +83,50 @@ if (input.value != document.getElementById('password').value) {
       <span class="input-group-text">
         <i class="bi bi-person-circle"></i>
               </span>
-      <input required ="required" oninput="check_email(this)" class="form-control" id="conf_correu_new_user">
+      <input required ="required" oninput="check_email(this)" class="form-control" name="conf_correu_new_user">
+      
     </div>
   </div>
 
-  <div class="mb-3">
+  <div class="mb-2">
+    <label for="name_new_user" class="form-label">Nom:</label>
+    <div class="mb-2 input-group">
+      <span class="input-group-text">
+        <i class="bi bi-0-circle"></i>
+              </span>
+      <input required ="required" maxlength="29" class="form-control" name="name_new_user">
+    </div>
+  </div>
+
+  <div class="mb-2">
+    <label for ="surname_new_user" class="form-label">Primer cognom:</label>
+    <div class="mb-2 input-group">
+      <span class="input-group-text">
+        <i class="bi bi-1-circle"></i>
+              </span>
+      <input required ="required"  class="form-control" maxlength="29" name="surname_new_user">
+    </div>
+
+    <div class="mb-2">
+      <label for="second_surname_new_user" class="form-label">Segon cognom:</label>
+      <div class="mb-2 input-group">
+        <span class="input-group-text">
+          <i class="bi bi-2-circle"></i>
+                </span>
+        <input required ="required"  class="form-control" maxlength="29" name="second_surname_new_user">
+      </div>
+
+  </div>
+
+  <div class="mb-2">
     <label for="InputPassword1" class="form-label" placeholder = "Nom d'usuari" required="required">
       Contrasenya</label>
     <div class="mb-2 input-group">
       <span class="input-group-text">
       <i class="bi bi-lock"></i>
     </span>
-    <input required ="required" pattern="[a-zA-Z\d.]{5,100}" title="La contrasenya ha de ser de mínim 5 caràcters i pot tenir lletres, números o punts." 
-    type="password" class="form-control" id="password">
+    <input required ="required" pattern="[a-zA-Z\d.]{5,100}" maxlength="30" title="La contrasenya ha de ser de mínim 5 caràcters i pot tenir lletres, números o punts." 
+    type="password" class="form-control" name="password">
     </div>
   </div>
 
@@ -146,8 +136,8 @@ if (input.value != document.getElementById('password').value) {
       <span class="input-group-text">
       <i class="bi bi-lock"></i>
       </span>
-    <input required="required" type="password" class="form-control" 
-    id="password_confirm" oninput="check_pwd(this)">
+    <input required="required" type="password" maxlength="30" class="form-control" 
+    name="password_confirm" oninput="check_pwd(this)">
     </div>
   </div>
 
@@ -156,12 +146,24 @@ if (input.value != document.getElementById('password').value) {
     <span class="input-group-text">
     <i class="bi bi-question-circle"></i>
     </span>
-  <select class="form-select" id="rol">
+  <select class="form-select" name="rol">
     <option value="administrator" selected> Administrador </option>
     <option value="user" selected> Usuari </option>
   </select>
   </div>
+
+  <div class="mb-2">
+    <label class="form-label">Valor de la targeta</label>
+    <div class="mb-2 input-group">
+      <span class="input-group-text">
+      <i class="bi bi-credit-card"></i>
+      </span>
+    <input required="required" name="rfid_value" class="form-control" minlength ="8" maxlength="8">
+    </div>
+  </div>
   <button type="submit" value="enviar" class="mt-4 btn btn-secondary">Registra</button>
+  <button type="reset" value="Borrar" class="mt-4 btn btn-secondary">Esborra</button>
+
 </form>
   </div>
 </div>
