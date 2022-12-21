@@ -1,7 +1,7 @@
 <?php
   $title="Home";
   $page="home";
-  include_once ("navbar.php");
+  include_once ("public-navbar.php");
 
   ?>
   

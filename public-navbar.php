@@ -29,7 +29,7 @@
           <div  class="collapse navbar-collapse" id="navbarSupportedContent">
               <ul class="navbar-nav me-auto mb-2 mb-lg-0">
               <li class="nav-item">
-                  <a class="nav-link" aria-current="page" href="html_public/login.html">Identifica't</a>
+                  <a class="nav-link" aria-current="page" href="public-login.html">Identifica't</a>
               </li>
               <li class="nav-item">
                   <a class="nav-link" href="#">Disponibilitat</a>
@@ -43,10 +43,9 @@
               <li class="nav-item dropdown">
                   <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Admin: Afegeix</a>
                   <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                  <li><a class="dropdown-item" href="./html_admin/register-machine-on-lab.php">Màquina a laboratori</a></li>
-                  <li><a class="dropdown-item" href="./html_admin/register-machine.php">Màquina</a></li>
-                  <li><a class="dropdown-item" href="./html_admin/register-lab.php">Laboratori</a></li>
-                  <li><a class="dropdown-item" href="./html_admin/register-user.php">Usuari</a></li>
+                  <li><a class="dropdown-item" href="admin-register-machine.php">Màquina</a></li>
+                  <li><a class="dropdown-item" href="admin-register-lab.php">Laboratori</a></li>
+                  <li><a class="dropdown-item" href="admin-register-user.php">Usuari</a></li>
                   </ul>
               </li>
               <li class="nav-item">

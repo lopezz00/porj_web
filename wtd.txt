@@ -12,11 +12,11 @@ COSEES A FER:
     - Fer fotos al lab per posar a la web.
     - Veure com posar imatges senceres, no nomes la part de dalt.
     - Com fer crides a una api
-    - Afegir a la navbar un item que sigui "inici", que portara a la pagina inicial
+    - Afegir a la public-navbar un item que sigui "inici", que portara a la pagina inicial
     - Discutir sobre la columna corresponent al nombre de maquines que poden haverhi en un laboratori de la tabla TECHLAB
     - Revisar les columnes de la taula "Techlab". Pensar en borrar totes i afegir "pis","aula","aforament maxim" (persones)
-    - Cambiar los archivos .html a .php incluyendo el fichero "navbar.php" en lugar de todas las lineas de la navbar
-    - Arreglar las sources de la navbar. IDEA: Una navbar para cada carpeta
+    - Cambiar los archivos .html a .php incluyendo el fichero "public-navbar.php" en lugar de todas las lineas de la public-navbar
+    - Arreglar las sources de la public-navbar. IDEA: Una public-navbar para cada carpeta
 
 DIFERENTES CARPETES:
     - Admin: Tiene admin, cliente y publico
