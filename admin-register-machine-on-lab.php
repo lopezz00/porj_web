@@ -65,7 +65,7 @@ if (input.value != document.getElementById('password').value) {
 <div class="row justify-content-center mt-2 mb-5">
   <div class="col-lg-6">
 
-<form name="form" action="../../porj_node/db/db_usuaris.php" method="post">
+<form name="form" action="../porj_node/db/db_usuaris.php" method="post">
   <div class="mb-2">
     <label for="email_new_user" class="form-label">Correu electrònic:</label>
     <div class="mb-2 input-group">
