@@ -9,16 +9,24 @@ UN COP HEM REVISAT EL CODI, PER PENJAR-LO FEM EL SEGÜENT:
     git push -u origin master
 
 COSEES A FER:
-    - Fer fotos al lab per posar a la web.
-    - Veure com posar imatges senceres, no nomes la part de dalt.
-    - Com fer crides a una api
-    - Afegir a la public-navbar un item que sigui "inici", que portara a la pagina inicial
-    - Discutir sobre la columna corresponent al nombre de maquines que poden haverhi en un laboratori de la tabla TECHLAB
-    - Revisar les columnes de la taula "Techlab". Pensar en borrar totes i afegir "pis","aula","aforament maxim" (persones)
-    - Cambiar los archivos .html a .php incluyendo el fichero "public-navbar.php" en lugar de todas las lineas de la public-navbar
-    - Arreglar las sources de la public-navbar. IDEA: Una public-navbar para cada carpeta
+1--> Prioritat més alta 
 
-DIFERENTES CARPETES:
-    - Admin: Tiene admin, cliente y publico
-    - Cliente: Cliente y publico
-    - Publico: Solo publico
+    - Fer fotos al lab per posar a la web. (Lopez)
+    - Discutir sobre la columna corresponent al nombre de maquines que poden haverhi en un laboratori de la tabla TECHLAB :
+            Utilitzar solucio LOPEZ (ID per maquina)
+
+    - Revisar les columnes de la taula "Techlab". Pensar en borrar totes i afegir "pis","aula","aforament maxim" (persones)
+    - Mirar de fer les BD amb sentit (Bastian)
+    - L'usuari pot fer X reserves (Francesc) -- 1
+    - Eliminar usuari / lab / reserva /maquina (Bastian) -- 1
+    - Crear lab / reserva / maquina(Bastian) -- 1
+    - Mirar consum, nomes pot l'admin -- 3
+    - Prohibir als usuaris visitar sources corresponents a l'admin (Lopez) -- 2
+    - Logearse i tancar sessio utilitzant cookies (Lopez)-- 1
+    - Capa de seguretat al utilitzar la maquina reservada
+    - Guardar el password a la BD en text no clar (potser utilitzant cesar)
+
+
+DIFERENTES INICIOS DE :
+    - Admin: Tiene admin, cliente 
+    - Cliente: Cliente 
