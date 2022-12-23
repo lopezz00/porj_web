@@ -1,110 +1,116 @@
-<!doctype html>
-<html lang="en">
 
-    <head>
-        <!-- Required meta tags -->
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/themes/redmond/jquery-ui.min.css" integrity="sha512-e7RyjvIuobYKTFb/Gxh8kyJobBZI9HMDYaExXkxFl8m9x6E/+z46nx/38qVFL302i5yBXcSn1CpcELb9UV1hRA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="/css/booking.css">
 
-        <!-- Bootstrap CSS -->
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-        <link rel="stylesheet" href="./css/main.css">
-        <title>USER - Reservation</title>
-    </head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css">
+    <script src="/js/booking.js"></script>
+    <script src="/js/lib/moment/moment.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js" integrity="sha512-uto9mlQzrs59VwILcLiRYeLKPPbS/bT71da/OEBYEwcdNUk8jYIy+D176RYoop1Da+f9mvkYrmj5MCLZWEtQuA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script>
+        $(function(){
+            $("#datepicker").datepicker({
+                dateFormat: "dd/mm/yy",
+                minDate: 0,
+                orientation: top
+            })
+            $("#datepicker").on("change", reserva);
+        });
+    </script>
 
-    <body>
-        <nav class="public-navbar public-navbar-expand-lg public-navbar-light bg-light p-4">
-            <div class="container-fluid">
-                <a class="public-navbar-brand text-primary fs-5 fw-bold">TechLab</a>
-                <button class="public-navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#public-navbarSupportedContent" aria-controls="public-navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="public-navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse public-navbar-collapse" id="public-navbarSupportedContent">
-                    <ul class="public-navbar-nav me-auto mb-2 mb-lg-0">
-                    <li class="nav-item">
-                        <a class="nav-link" aria-current="page" href="form.html">Identifica't</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Disponibilitat</a>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="public-navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Fes una reserva</a>
-                        <ul class="dropdown-menu" aria-labelledby="public-navbarDropdown">
-                        <li><a class="dropdown-item" href="#">Laboratori 1</a></li>
-                        <li><a class="dropdown-item" href="#">Laboratori 2</a></li>
-                        </ul>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="public-navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Admin: Afegeix</a>
-                        <ul class="dropdown-menu" aria-labelledby="public-navbarDropdown">
-                        <li><a class="dropdown-item" href="#">Màquina</a></li>
-                        <li><a class="dropdown-item" href="#">Laboratori</a></li>
-                        <li><a class="dropdown-item" href="#">Usuari</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Cancel·la una reserva</a> <!--- En cas de que l'usuari tingui una o mes reserves, s'ha d'activar --->
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Tanca sessió</a> <!--- Tanca la sessio de l'usuari --->
-                    
-                    </ul>
+    <div class="container-fluid">
+        <div class="row justify-content-center align-items-start">
+           <div class="col col-10 mt-4 bg-light p-4 rounded">
+                <div class="row mb-3">
+                    <div class="col">
+                        <h3 class="bg-blue text-light p-1 fs-4 rounded" >Reserves</h3>
+                    </div>
                 </div>
+
+                <div class="row">
+                    <div class="col">
+                        <h4 class="h4-sections border-bottom fs-5">Les meves reserves</h4>
+                        <div class="row">
+                            <div class="col col-4">
+                                <div>
+                                    {% if meves_reserves == [] %}
+                                    <p class="mt-2">No tens cap reserva vigent.<p>
+                                    {% else %}
+                                    <table class="table table-borderless table-striped">
+                                        <thead>
+                                            <tr class="table-headers">
+                                                <th class="text-center p-2 border-bottom">Data</th>
+                                                <th class="text-center p-2 border-bottom">Hora</th>
+                                                <th class="text-center p-2 border-bottom">Màquina</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            {% for item in meves_reserves %}
+                                            <tr>
+                                                <td class="text-center p-2">{{(item.data_in.split(' '))[0]}}</td>
+                                                <td class="text-center p-2">{{(item.data_in.split(' '))[1]}} - {{(item.data_out.split(' '))[1]}}</td>
+                                                <td class="text-center p-2">{{item.nom_maquina}}</td>
+                                            </tr>
+                                            {% endfor %}
+                                        </tbody>
+                                    </table>
+                                    {% endif %}
+                                </div> 
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col">
+                        <h4 class="h4-sections border-bottom fs-5">Estat a TechLab</h4>
+                        <div class="mt-3">
+                            <p><span class="fw-bold fs-6">Temps disponible: &nbsp;</span><span id="temps_disp">-</span></p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col">
+                        <h4 class="h4-sections border-bottom fs-5">Formulari de reserva</h4>
+                        <form id="form" action="" method="POST">
+                            <div class="row mt-3 mb-5 justify-content-center">
+                                <div class="col col-2">
+                                    <label class="form-label fw-bold" for="maquines">Màquina</label>
+                                    <select class="form-select mb-3" name="maquines" id="maquines" required>
+                                        <option value="">Tria una opció</option>
+                                        {% for item in maquines %}
+                                        <option value="{{item.id}}">{{item.nom_maquina}}</option>
+                                        {% endfor %}
+                                    </select>
+                
+                                    <label class="form-label fw-bold" for="datepicker">Data</label>
+                                    <div class="input-group">
+                                        <input class="form-control" type="text" name="data" id="datepicker" value="{{current_date}}" required>
+                                        <label for="datepicker" class="label-date input-group-text"><span class="bi-calendar-fill"></span></label>
+                                    </div>
+                
+                                    <label for="reservar"></label>
+                                    <input class="form-submit text-light fw-bold w-100" type="submit" name="reservar" id="reservar" value="Reservar">
+                                </div>
+                            </div>
+
+                            <div class="row justify-content-center">
+                                <div class="col col-8" id="disp">
+                                    <p class="text-center">No hi ha cap reserva disponible.</p>
+                                </div>
+                            </div>        
+                        </form>  
+                    </div>
+                </div>
+           </div>
+        </div>
+        <!--ESPAI A SOTA DEL CONTENIDOR-->
+        <div class="row">
+            <div class="col mt-3">
+                <p></p>
             </div>
-        </nav>
-
-        <form id="histMaquinesform" action="" method="post" role="form" class="form">
-            <!--div id="sendmessage">Consulta realitzada</div-->
-            <!--div id="errormessage">Consulta error</div-->
-            <div class="row">
-                <div class="span8 margintop10 field form-group">
-                    <span class="form-hist"><i class="far fa-calendar-alt"></i>&nbsp;Date</span>
-                    <br>
-                    <input type="date" id="data-reserva">
-                    <div class="validation"></div>
-                </div>
-
-                <div class="span8 margintop10 field form-group">
-                    <span class="form-hist"><i class="fas fa-clock"></i>&nbsp;Reservation time</span>
-                    <br>
-                    <input type="time" min = "10:00" id="hora-inici">
-                    <div class="validation"></div>
-                </div>
-
-                <div class="fform-group log-status span8 margintop10 field">
-                    <span class="form-hist"><i class="fas fa-desktop"></i>&nbsp;Laboratory</span>
-                    <br><input type="text" list="maquines">
-                    <datalist id="maquines">
-                        <!-- Posar una llita que s'actualitzi segons labs hi hagin a la uni -->
-                        <option value="Lab 1"></option>
-                        <option value="Lab 2"></option>
-                        <option value="Lab 3"></option>
-                        <option value="Lab 4"></option>
-                        <option value="Lab 5"></option>
-                    </datalist>
-                </div>
-
-                <div class="fform-group log-status span8 margintop10 field">
-                    <span class="form-hist"><i class="fas fa-desktop"></i>&nbsp;Machine</span>
-                    <br><input type="text" list="maquines">
-                    <datalist id="maquines">
-                        <!-- Posar una llita que s'actualitzi segons maquines hi hagin al lab -->
-                        <option value="Machine 1"></option>
-                        <option value="Machine 2"></option>
-                        <option value="Machine 3"></option>
-                        <option value="Machine 4"></option>
-                        <option value="Machine 5"></option>
-                    </datalist>
-                </div>
-                <p>
-                    <button class="btn btn-color marginleft10" type="submit">Submit</button>
-                </p>
-            </div>
-        </form>
-
-
-
-
-
-    </body>
-
-</html>
+        </div>
+    </div>
+{% endblock %}
