@@ -38,7 +38,7 @@ if (input.value != document.getElementById('password').value) {
     <?php
     $title="Home";
     $page="home";
-    include_once ("../public-navbar.php");
+    include_once ("public-navbar.php");
 
   
     ?>
@@ -49,7 +49,7 @@ if (input.value != document.getElementById('password').value) {
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
     <script src="https://unpkg.com/typewriter-effect@latest/dist/core.js"></script>
     <script src="./js/main.js"></script>
-    <script src="/css/main3.css"></script>
+    <!--<script src="/css/main3.css"></script>-->
 
   </body>
 </html>
@@ -58,110 +58,35 @@ if (input.value != document.getElementById('password').value) {
 <section name="new_user">
   <div class="container-md">
     <div class="text-center">
-      <h2 class="text-primary mt-3">Registra a un nou usuari</h2>
-      <p class="mt-4">En aquesta pàgina pots registrar a un usuari, definint així el seu rol.</p>
-      <p> Si la teva intenció es canviar a un usuari existent d'usuari a administrador, has d' eliminar el seu compte actual i torna-ho a crear amb el rol corresponent.</p>
+      <h2 class="text-primary mt-3">Dona d'alta a un laboratori</h2>
+      <p class="mt-4">En aquesta pàgina pots donar d'alta a un laboratori per posteriorment assignar màquines en aquest.</p>
     </div>
 <div class="row justify-content-center mt-2 mb-5">
   <div class="col-lg-6">
 
-<form name="form" action="../porj_node/db/db_usuaris.php" method="post">
+  <form name="form" action="../porj_node/db/db_labs.php" method="post">
   <div class="mb-2">
-    <label for="email_new_user" class="form-label">Correu electrònic:</label>
+    <label for="name_new_lab" class="form-label">Nom del laboratori</label>
     <div class="mb-2 input-group">
       <span class="input-group-text">
-        <i class="bi bi-person-circle"></i>
+        <i class="bi bi-border-outer"></i>
               </span>
-      <input required ="required" maxlength="50" type="email" class="form-control" name="correu_new_user" placeholder="Exemple: pau@estudiantat.upc.edu">
+      <input required ="required" maxlength="50" class="form-control" name="name_new_lab" placeholder="Exemple: Laboratori de física">
     </div>
-    <div id="emailHelp" class="form-text">Totes les dades demanades es corresponen a l'estudiant</div>
   </div>
 
   <div class="mb-2">
-    <label for="email_new_user" class="form-label">Confirma correu electrònic:</label>
+    <label for="description_lab" class="form-label">Descripció del laboratori</label>
     <div class="mb-2 input-group">
       <span class="input-group-text">
-        <i class="bi bi-person-circle"></i>
+        <i class="bi bi-card-text"></i>
               </span>
-      <input required ="required" oninput="check_email(this)" class="form-control" name="conf_correu_new_user">
+      <input required ="required" class="form-control" name="description_lab">
       
     </div>
   </div>
 
-  <div class="mb-2">
-    <label for="name_new_user" class="form-label">Nom:</label>
-    <div class="mb-2 input-group">
-      <span class="input-group-text">
-        <i class="bi bi-0-circle"></i>
-              </span>
-      <input required ="required" maxlength="29" class="form-control" name="name_new_user">
-    </div>
-  </div>
-
-  <div class="mb-2">
-    <label for ="surname_new_user" class="form-label">Primer cognom:</label>
-    <div class="mb-2 input-group">
-      <span class="input-group-text">
-        <i class="bi bi-1-circle"></i>
-              </span>
-      <input required ="required"  class="form-control" maxlength="29" name="surname_new_user">
-    </div>
-
-    <div class="mb-2">
-      <label for="second_surname_new_user" class="form-label">Segon cognom:</label>
-      <div class="mb-2 input-group">
-        <span class="input-group-text">
-          <i class="bi bi-2-circle"></i>
-                </span>
-        <input required ="required"  class="form-control" maxlength="29" name="second_surname_new_user">
-      </div>
-
-  </div>
-
-  <div class="mb-2">
-    <label for="InputPassword1" class="form-label" placeholder = "Nom d'usuari" required="required">
-      Contrasenya</label>
-    <div class="mb-2 input-group">
-      <span class="input-group-text">
-      <i class="bi bi-lock"></i>
-    </span>
-    <input required ="required" pattern="[a-zA-Z\d.]{5,100}" maxlength="30" title="La contrasenya ha de ser de mínim 5 caràcters i pot tenir lletres, números o punts." 
-    type="password" class="form-control" name="password">
-    </div>
-  </div>
-
-  <div class="mb-3">
-    <label for="InputPassword2" class="form-label">Repeteix contrasenya</label>
-    <div class="mb-2 input-group">
-      <span class="input-group-text">
-      <i class="bi bi-lock"></i>
-      </span>
-    <input required="required" type="password" maxlength="30" class="form-control" 
-    name="password_confirm" oninput="check_pwd(this)">
-    </div>
-  </div>
-
-  <label for ="rol" class="form-label">Rol de l'usuari</label>
-  <div class="mb-2 input-group">
-    <span class="input-group-text">
-    <i class="bi bi-question-circle"></i>
-    </span>
-  <select class="form-select" name="rol">
-    <option value="administrator" selected> Administrador </option>
-    <option value="user" selected> Usuari </option>
-  </select>
-  </div>
-
-  <div class="mb-2">
-    <label class="form-label">Valor de la targeta</label>
-    <div class="mb-2 input-group">
-      <span class="input-group-text">
-      <i class="bi bi-credit-card"></i>
-      </span>
-    <input required="required" name="rfid_value" class="form-control" minlength ="8" maxlength="8">
-    </div>
-  </div>
-  <button type="submit" value="enviar" class="mt-4 btn btn-secondary">Registra</button>
+  <button type="submit" value="enviar" class="mt-4 btn btn-secondary">Dona d'alta</button>
   <button type="reset" value="Borrar" class="mt-4 btn btn-secondary">Esborra</button>
 
 </form>

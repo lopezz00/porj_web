@@ -25,7 +25,9 @@ COSEES A FER:
     - Logearse i tancar sessio utilitzant cookies (Lopez)-- 1
     - Capa de seguretat al utilitzar la maquina reservada
     - Guardar el password a la BD en text no clar (potser utilitzant cesar)
-
+    - Mirar com augmentar l'altura del input dels description al registrar labs i maquines
+    - Retornar a la mateixa pagina d'abans al registrar alguna cosa
+    - Gestionar errors al registrar alguna cosa (duplicat de claus primaries, etc)
 
 DIFERENTES INICIOS DE :
     - Admin: Tiene admin, cliente 

@@ -2,6 +2,7 @@
 <html lang="en" dir="ltr">
   <head>
     <!-- Required meta tags -->
+    <title> TechlabHubs - Registra a un usuari </title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 <script>
@@ -38,7 +39,7 @@ if (input.value != document.getElementById('password').value) {
     <?php
     $title="Home";
     $page="home";
-    include_once ("../public-navbar.php");
+    include_once ("public-navbar.php");
 
   
     ?>
