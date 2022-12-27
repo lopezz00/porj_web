@@ -4,6 +4,7 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href="/css/main.css">
@@ -33,33 +34,32 @@
 </html>
 
 <!---- INTRO --->
-<section name="new_user">
+<section name="delete_lab">
   <div class="container-md">
     <div class="text-center">
-      <h2 class="text-primary mt-3">Dona d'alta a un laboratori</h2>
-      <p class="mt-4">En aquesta pàgina pots donar d'alta a un laboratori per posteriorment assignar màquines en aquest.</p>
+      <h2 class="text-primary mt-3">Esborra una màquina</h2>
     </div>
-<div class="row justify-content-center mt-2 mb-5">
+<div class="row justify-content-center mb-5">
   <div class="col-lg-6">
 
-  <form name="form" action="../porj_node/db/db_labs.php" method="post">
+  <form name="form" action="../porj_node/db/db_maquines_delete.php" method="post">
   <div class="mb-2">
-    <label for="name_new_lab" class="form-label">Nom del laboratori</label>
+    <label for="name_machine" class="form-label">Nom de la màquina</label>
     <div class="mb-2 input-group">
       <span class="input-group-text">
         <i class="bi bi-border-outer"></i>
               </span>
-      <input required ="required" maxlength="50" class="form-control" name="name_new_lab" placeholder="Exemple: Laboratori de física">
+      <input required ="required" maxlength="50" class="form-control" name="name_machine" placeholder="Exemple: Soldadora">
     </div>
   </div>
 
-  <div class="mb-2">
-    <label for="description_lab" class="form-label">Descripció del laboratori</label>
+    <div class="mb-2">
+    <label for="name_lab" class="form-label">Laboratori assignat</label>
     <div class="mb-2 input-group">
       <span class="input-group-text">
         <i class="bi bi-card-text"></i>
               </span>
-      <input required ="required" class="form-control" name="description_lab">
+      <input required ="required" class="form-control" name="name_lab">
       
     </div>
   </div>

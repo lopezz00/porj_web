@@ -1,6 +1,6 @@
 <?php
-  $title="Home";
-  $page="home";
+  $title="reserva";
+  $page="reserva";
   include_once ("public-navbar.php");
 
   ?>
@@ -82,12 +82,24 @@
                         <form id="form" action="" method="POST">
                             <div class="row mt-3 mb-5 justify-content-center">
                                 <div class="col col-2">
-                                    <label class="form-label fw-bold" for="maquines">Màquina</label>
-                                    <select class="form-select mb-3" name="maquines" id="maquines" required>
-                                        <option value="">Tria una opció</option>
-                                        {% for item in maquines %}
-                                        <option value="{{item.id}}">{{item.nom_maquina}}</option>
-                                        {% endfor %}
+                                    <label class="form-label fw-bold" for="maquines">Laboratori</label>
+                                    <select class="form-control" name="labs" required>
+                                    
+                                        <?php    
+                                        include("conexion.php");
+                                        $getLabs1 = "select * from labs order by nom_lab";
+                                        $getLabs2 = mysql_query($getLabs1);
+                                            
+                                        while($row = mysql_fetch_array($getLabs2))
+                                        {
+                                            $nom_lab= $row['nom_lab'];
+                                            $descripcio = $row['descripcio'];
+                                            ?>
+                                            <option value="<?php echo $nom_lab; ?>"><?php echo $nom_lab; ?></option>
+                                            <?php
+                                        }
+                                        ?>
+                                    
                                     </select>
                 
                                     <label class="form-label fw-bold" for="datepicker">Data</label>

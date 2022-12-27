@@ -33,39 +33,27 @@
 </html>
 
 <!---- INTRO --->
-<section name="new_user">
+<section name="delete_lab">
   <div class="container-md">
     <div class="text-center">
-      <h2 class="text-primary mt-3">Dona d'alta a un laboratori</h2>
-      <p class="mt-4">En aquesta pàgina pots donar d'alta a un laboratori per posteriorment assignar màquines en aquest.</p>
+      <h2 class="text-primary mt-3">Esborra un laboratori</h2>
+      <p class="mt-4">Al esborrar un laboratori amb màquines associades, aquestes màquines s'esborraran també!</p>
     </div>
 <div class="row justify-content-center mt-2 mb-5">
   <div class="col-lg-6">
 
-  <form name="form" action="../porj_node/db/db_labs.php" method="post">
+  <form name="form" action="../porj_node/db/db_labs_delete.php" method="post">
   <div class="mb-2">
     <label for="name_new_lab" class="form-label">Nom del laboratori</label>
     <div class="mb-2 input-group">
       <span class="input-group-text">
         <i class="bi bi-border-outer"></i>
               </span>
-      <input required ="required" maxlength="50" class="form-control" name="name_new_lab" placeholder="Exemple: Laboratori de física">
+      <input required ="required" maxlength="50" class="form-control" name="name_lab" placeholder="Exemple: Laboratori de física">
     </div>
   </div>
 
-  <div class="mb-2">
-    <label for="description_lab" class="form-label">Descripció del laboratori</label>
-    <div class="mb-2 input-group">
-      <span class="input-group-text">
-        <i class="bi bi-card-text"></i>
-              </span>
-      <input required ="required" class="form-control" name="description_lab">
-      
-    </div>
-  </div>
-
-  <button type="submit" value="enviar" class="mt-4 btn btn-secondary">Dona d'alta</button>
-  <button type="reset" value="Borrar" class="mt-4 btn btn-secondary">Esborra</button>
+  <button type="submit" value="enviar" class="mt-4 btn btn-secondary">Esborra laboratori</button>
 
 </form>
   </div>

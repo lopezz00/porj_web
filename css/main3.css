@@ -23,6 +23,21 @@ html,body{
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
 }
 
+.ok{
+  text-align:center;
+  width: 100%;
+  padding: 12px;
+  background-color: #4e8;
+  color: #fff
+}
+
+.bad{
+  text-align:center;
+  width: 100%;
+  padding: 12px;
+  background-color: #a21;
+  color: #fff
+}
 .container form{
   margin: 5px 8px;
 }

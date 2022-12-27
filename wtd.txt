@@ -15,19 +15,16 @@ COSEES A FER:
     - Discutir sobre la columna corresponent al nombre de maquines que poden haverhi en un laboratori de la tabla TECHLAB :
             Utilitzar solucio LOPEZ (ID per maquina)
 
-    - Revisar les columnes de la taula "Techlab". Pensar en borrar totes i afegir "pis","aula","aforament maxim" (persones)
+
     - Mirar de fer les BD amb sentit (Bastian)
     - L'usuari pot fer X reserves (Francesc) -- 1
-    - Eliminar usuari / lab / reserva /maquina (Bastian) -- 1
-    - Crear lab / reserva / maquina(Bastian) -- 1
     - Mirar consum, nomes pot l'admin -- 3
     - Prohibir als usuaris visitar sources corresponents a l'admin (Lopez) -- 2
     - Logearse i tancar sessio utilitzant cookies (Lopez)-- 1
     - Capa de seguretat al utilitzar la maquina reservada
     - Guardar el password a la BD en text no clar (potser utilitzant cesar)
     - Mirar com augmentar l'altura del input dels description al registrar labs i maquines
-    - Retornar a la mateixa pagina d'abans al registrar alguna cosa
-    - Gestionar errors al registrar alguna cosa (duplicat de claus primaries, etc)
+    - Veure si es necesaria la confirmacio de correu electronic ja que amb JS no funciona
 
 DIFERENTES INICIOS DE :
     - Admin: Tiene admin, cliente 
